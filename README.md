@@ -32,7 +32,7 @@ type Language = {
 }
 
 
-Info.__index = ProfileMeta
+Info.__index = Info
 
 
 function Info.new(name: string -> (string), age: number -> (number), hobbies: Hobbies -> (Hobbies), job: Job -> (Job), languages: Language -> (Language)): Profile
