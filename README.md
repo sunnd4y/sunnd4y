@@ -10,24 +10,24 @@ local Info = getmetatable(Profile)
 
 
 type Hobbies = {
-  Coding: boolean -> (boolean),
-  PlayingGames: boolean -> (boolean),
-  SelfImprovement: boolean -> (boolean)
+  Coding: boolean,
+  PlayingGames: boolean,
+  SelfImprovement: boolean
 }
 
 type Job = {
-  SkiddestSkidOfAllTime: boolean -> (boolean),
-  Student: boolean -> (boolean)
+  SkiddestSkidOfAllTime: boolean ,
+  Student: boolean
 }
 
 type Language = {
   Code: {
-    Lua: boolean -> (boolean),
-    CPP: boolean -> (boolean)
+    Lua: boolean,
+    CPP: boolean 
   },
   IrlLang: {
-    Thai: boolean -> (boolean),
-    English: boolean -> (boolean)
+    Thai: boolean ,
+    English: boolean
   }
 }
 
@@ -35,7 +35,7 @@ type Language = {
 Info.__index = Info
 
 
-function Info.new(name: string -> (string), age: number -> (number), hobbies: Hobbies -> (Hobbies), job: Job -> (Job), languages: Language -> (Language)): Profile
+function Info.new(name: string , age: number , hobbies: Hobbies , job: Job , languages: Language ): Profile
   local self = setmetatable({}, Info)
   self.Name = name
   self.Age = age
@@ -46,7 +46,7 @@ function Info.new(name: string -> (string), age: number -> (number), hobbies: Ho
 end
 
 
-function Info:GetInfo() -> (string)
+function Info:GetInfo(): string 
   local hobbiesList = {}
   for hobby, status in pairs(self.Hobbies) do
     table.insert(hobbiesList, hobby .. ": " .. tostring(status))
