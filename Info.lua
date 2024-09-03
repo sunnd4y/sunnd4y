@@ -88,5 +88,5 @@ local hobbies: Hobbies = {
     }
   }
   
-  local profile = Info.new("Sun", 14, hobbies, job, languages)
+  local profile = Info.new("Sun", 69, hobbies, job, languages)
   print(profile:GetInfo())
